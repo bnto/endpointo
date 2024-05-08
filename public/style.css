@@ -1,0 +1,59 @@
+/* simple reset */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+  hanging-punctuation: first last;
+}
+
+body {
+  min-height: 100svh;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+/* new css properties reset */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p {
+  max-width: 75ch;
+  text-wrap: pretty;
+}
+
+@media (prefer-reduced-motion: no-preference) {
+  :has(:target) {
+    scroll-behavior: smooth;
+    scroll-padding-top: 1rem;
+  }
+}
+
+html {
+  font-family:
+    Helvetica,
+    "Raleway",
+    -apple-system,
+    sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 2rem;
+}
