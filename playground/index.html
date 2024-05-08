@@ -1,0 +1,20 @@
+<html>
+  <head></head>
+  <body>
+    <form hx-post="/api/rss" hx-target="#response" hx-indicator="#spinner">
+      <input
+        type="text"
+        name="data"
+        value=""
+      />
+      <button type="submit">RSS</button>
+    </form>
+    <p id="spinner" class="htmx-indicator">loading...</p>
+    <div id="response" hx-target="#response" hx-swap="innerHTML"></div>
+    <script
+      src="https://unpkg.com/htmx.org@1.9.12"
+      integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

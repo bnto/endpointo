@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const RSS_URL = "";
+
+      fetch(RSS_URL)
+        .then((response) => response.text())
+        .then((str) => new window.DOMParser().parseFromString(str, "text/xml"))
+        .then((data) => {
+          console.log(data);
+          const items = data.querySelectorAll("item");
+          let html = ``;
+          items.forEach((el) => {
+            console.log(el.querySelector("title").innerHTML);
+            html += `
+                    <article>
+                    <h2>
+                        <a href="${el.querySelector("link").innerHTML}" target="_blank" rel="noopener">
+                        ${el.querySelector("title").innerHTML}
+                        </a>
+                    </h2>
+                    </article>
+                `;
+          });
+          document.body.insertAdjacentHTML("beforeend", html);
+        });
+    </script>
+  </body>
+</html>
